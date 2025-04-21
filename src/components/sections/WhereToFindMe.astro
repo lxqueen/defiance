@@ -1,0 +1,75 @@
+---
+import { Picture, getImage } from "astro:assets";
+import background from "../../assets/images/map-blank-cropped.png";
+import VotanSubhead from "../VotanSubhead.astro";
+
+const optimizedBackground = await getImage({
+	src: background,
+	format: "webp",
+	quality: 80,
+});
+---
+
+<section id="where-to-find-me">
+	<div class="shop-container wa-grid wa-gap-xl wa-align-items-center">
+		<hgroup class="shop-hgroup">
+			<h2>Where to Find Me</h2>
+			<VotanSubhead castithan="WhereToFindUs" irathient="wheretofindus" />
+
+			<p>You can find me at the Crater, off the main highway to Marin.</p>
+			<p>The place has rooms to rent, is hellbug-free, and the drinks don't cost a cybernetic arm or leg either.</p>
+			<p><em>Want your purchase delivered elsewhere? No problem, just let me know when you place the order.</em></p>
+		</hgroup>
+
+		<figure class="shop-crater wa-frame:landscape wa-outlined wa-border-radius-s">
+			<Picture src={background} formats={['avif', 'webp']} alt="The Crater bar, pictured at night." />
+		</figure>
+	</div>
+</section>
+
+<style scoped define:vars={{ background: `url("${optimizedBackground.src}")` }}>
+	#where-to-find-me {
+		position: relative;
+		padding-block: var(--wa-space-3xl);
+		background-color: var(--wa-color-surface-lowered);
+		background-image: var(--background);
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 25% 25%;
+		text-wrap: balance;
+
+		&::before {
+			position: absolute;
+			content: '';
+			display: block;
+			inset: 0;
+			background-image: var(--shop-noise-image), radial-gradient(circle at center, color-mix(in srgb, var(--wa-color-surface-lowered), transparent 25%) 66%, var(--wa-color-surface-lowered));
+			background-size: var(--shop-noise-size), auto;
+			background-attachment: fixed, scroll;
+			background-blend-mode: overlay;
+			box-shadow: inset 0 0 var(--wa-shadow-blur-l) var(--wa-color-shadow);
+		}
+
+		> * {
+			position: relative;
+			z-index: 1;
+		}
+
+		.shop-crater {
+			position: relative;
+			border: 1px solid var(--border-color);
+			box-shadow: var(--wa-shadow-l);
+
+			img {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				border: .5rem solid var(--wa-color-gray-90);
+				box-sizing: border-box;
+			}
+		}
+	}
+</style>
