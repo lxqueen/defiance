@@ -5,7 +5,11 @@ import { SITE_NAME } from "../consts";
 import "../assets/css/theme.css";
 import "../assets/css/root.css";
 
-const { title, ...props } = Astro.props;
+export interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <html lang="en">

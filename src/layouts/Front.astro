@@ -1,9 +1,11 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import BaseLayout from "./Base.astro";
+import { default as BaseLayout, type Props as BaseProps } from "./Base.astro";
 
-const { title, ...props } = Astro.props;
+interface Props extends BaseProps {}
+
+const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
