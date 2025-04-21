@@ -1,8 +1,6 @@
 ---
 import Logo from "./Logo.svg";
 import Settings from "./_Settings.astro";
-
-import "./Header.css";
 ---
 
 <header class="shop-header">
@@ -11,3 +9,14 @@ import "./Header.css";
 		<Settings />
 	</div>
 </header>
+
+<style scoped>
+	.shop-header {
+		position: relative;
+		padding-block: var(--wa-space-m);
+
+		.logo {
+			width: 6rem;
+		}
+	}
+</style>

@@ -1,8 +1,6 @@
 ---
 import VotanSubhead from "../VotanSubhead.astro";
 import Testimonial from "./_Testimonial.astro";
-
-import "./Testimonials.css";
 ---
 
 <section id="testimonials">
@@ -28,3 +26,29 @@ import "./Testimonials.css";
 		</div>
 	</div>
 </section>
+
+<style scoped>
+	#testimonials {
+		position: relative;
+		padding-block: var(--wa-space-3xl);
+		background-color: var(--wa-color-surface-lowered);
+		text-wrap: balance;
+
+		.shop-testimonial-content {
+			margin-block: auto;
+
+			&::before {
+				content: '"';
+			}
+
+			&::after {
+				content: '"';
+			}
+		}
+
+		.shop-testimonial-author {
+			text-align: end;
+			font-weight: var(--wa-font-weight-semibold);
+		}
+	}
+</style>

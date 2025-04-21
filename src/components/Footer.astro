@@ -7,8 +7,6 @@ import {
 } from "../consts";
 import SocialIcon from "./_SocialIcon.astro";
 
-import "./Footer.css";
-
 const CURRENT_YEAR = new Date().getFullYear();
 ---
 
@@ -41,3 +39,20 @@ const CURRENT_YEAR = new Date().getFullYear();
 		</div>
 	</div>
 </footer>
+
+<style scoped>
+	.shop-footer {
+		position: relative;
+		margin-block-start: auto;
+		padding-block: var(--wa-space-xl) var(--wa-space-3xl);
+		background-color: var(--wa-color-surface-lowered);
+		color: var(--wa-color-text-quiet);
+		text-wrap: balance;
+
+		.shop-social-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+</style>

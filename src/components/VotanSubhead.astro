@@ -1,6 +1,4 @@
 ---
-import "./VotanSubhead.css";
-
 interface Props {
 	castithan: string;
 	irathient: string;
@@ -9,8 +7,16 @@ interface Props {
 const { castithan = "", irathient = "" } = Astro.props;
 ---
 
-<div class="shop-subhead wa-body-l" aria-hidden>
+<div class="subhead wa-body-l" aria-hidden>
 	<span class="font-castithan">{castithan}</span>
-	<span class="shop-subhead-divider">/</span>
+	<span class="divider">/</span>
 	<span class="font-irathient">{irathient}</span>
 </div>
+
+<style scoped>
+	.subhead {
+		.divider {
+			color: var(--wa-color-text-quiet);
+		}
+	}
+</style>

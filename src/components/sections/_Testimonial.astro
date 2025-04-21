@@ -13,3 +13,22 @@ const { author, ...props } = Astro.props;
 
 	<p class="shop-testimonial-author wa-caption-m">{author}</p>
 </div>
+
+<style scoped>
+	.shop-testimonial-content {
+		margin-block: auto;
+
+		&::before {
+			content: '"';
+		}
+
+		&::after {
+			content: '"';
+		}
+	}
+
+	.shop-testimonial-author {
+		text-align: end;
+		font-weight: var(--wa-font-weight-semibold);
+	}
+</style>
