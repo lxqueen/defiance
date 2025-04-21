@@ -11,3 +11,21 @@
 	--shop-noise-image: url("../images/noise.webp");
 	--shop-noise-size: 8rem;
 }
+
+/* Colors. */
+:where(:root),
+:host,
+:where([class^="wa-theme-"], [class*=" wa-theme-"]),
+.wa-palette-default {
+	--wa-color-gray-95: oklch(96% calc(0.03 * 0.5) 215);
+	--wa-color-gray-90: oklch(92% calc(0.03 * 0.7) 215);
+	--wa-color-gray-80: oklch(84% calc(0.03 * 0.8) 215);
+	--wa-color-gray-70: oklch(76% calc(0.03 * 0.9) 215);
+	--wa-color-gray-60: oklch(67% calc(0.03 * 0.95) 215);
+	--wa-color-gray-50: oklch(56% calc(0.03 * 1) 215);
+	--wa-color-gray-40: oklch(46% calc(0.03 * 0.95) 215);
+	--wa-color-gray-30: oklch(39% calc(0.03 * 0.9) 215);
+	--wa-color-gray-20: oklch(32% calc(0.03 * 0.8) 215);
+	--wa-color-gray-10: oklch(24% calc(0.03 * 0.7) 215);
+	--wa-color-gray-05: oklch(18% calc(0.03 * 0.5) 215);
+}
