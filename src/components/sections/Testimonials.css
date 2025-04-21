@@ -17,5 +17,6 @@
 
 	.shop-testimonial-author {
 		text-align: end;
+		font-weight: var(--wa-font-weight-semibold);
 	}
 }
