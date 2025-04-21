@@ -4,6 +4,8 @@
 	background-color: var(--wa-color-surface-lowered);
 
 	.shop-testimonial-content {
+		margin-block: auto;
+
 		&::before {
 			content: '"';
 		}
