@@ -1,3 +1,42 @@
-<footer class="wa-cluster">
+---
+import {
+	ARK_ANGELS_DISCORD,
+	FAWKES_DISCORD,
+	SITE_NAME,
+	SOCIALS,
+} from "../consts";
 
+import "./Footer.css";
+
+const CURRENT_YEAR = new Date().getFullYear();
+---
+
+<footer class="shop-footer">
+	<div class="shop-container wa-grid wa-size-s">
+		<div class="wa-stack wa-gap-s">
+			<p class="wa-caption-s">&copy; {CURRENT_YEAR} {SITE_NAME}. All rights reserved.</p>
+			<p class="wa-caption-s">{SITE_NAME} is not affiliated with Fawkes/Trion/Gamigo et al. All game content is property of their respective owners.</p>
+		</div>
+
+		<div class="wa-stack wa-gap-s">
+			<h2 class="wa-heading-s">Get in Touch</h2>
+
+			<ul class="shop-social-list">
+				{SOCIALS.map((social) => {
+					const Element = social.url ? 'a' : 'span';
+
+					return (
+						<li>
+							<Element class="wa-flank wa-gap-xs" target="_blank" title={social.name} href={social.url}>
+								<span>{social.name}</span>
+								<span>{social.value}</span>
+							</Element>
+						</li>
+					)
+				})}
+			</ul>
+
+			<p class="wa-caption-s">If you can't DM me on Discord, make sure you are in either the <a href={FAWKES_DISCORD} target="_blank">official Fawkes server</a> or the <a href={ARK_ANGELS_DISCORD} target="_blank">Ark Angels Auction House server</a>.</small></p>
+		</div>
+	</div>
 </footer>

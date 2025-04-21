@@ -1,0 +1,4 @@
+:root {
+	--shop-content-width: 75rem;
+	--shop-content-gutter: var(--wa-space-xl);
+}

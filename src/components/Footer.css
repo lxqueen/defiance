@@ -1,0 +1,17 @@
+body>main:is(+ .shop-footer) {
+	margin-block-end: var(--wa-space-xl);
+}
+
+.shop-footer {
+	position: relative;
+	margin-block-start: auto;
+	padding-block: var(--wa-space-xl) var(--wa-space-3xl);
+	background-color: var(--wa-color-surface-lowered);
+	color: var(--wa-color-text-quiet);
+
+	.shop-social-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}

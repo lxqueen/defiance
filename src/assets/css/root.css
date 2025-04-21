@@ -1,0 +1,11 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.shop-container {
+	padding-inline: var(--shop-content-gutter);
+	margin-inline: auto;
+	max-width: var(--shop-content-width);
+	width: 100%;
+}
