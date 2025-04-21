@@ -1,0 +1,8 @@
+.shop-header {
+	position: relative;
+	padding-block: var(--wa-space-m);
+
+	.logo {
+		width: 6rem;
+	}
+}
