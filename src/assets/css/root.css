@@ -19,6 +19,7 @@ body > main {
 	background-color: var(--wa-color-surface-default);
 	background-image: var(--shop-noise-image);
 	background-size: var(--shop-noise-size);
+	box-shadow: var(--wa-shadow-l);
 
 	> * {
 		margin-block: 0;

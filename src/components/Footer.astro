@@ -42,7 +42,11 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 <style scoped>
 	.shop-footer {
-		position: relative;
+		position: sticky;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
 		margin-block-start: auto;
 		padding-block: var(--wa-space-xl) var(--wa-space-3xl);
 		background-color: var(--wa-color-surface-lowered);
@@ -50,6 +54,11 @@ const CURRENT_YEAR = new Date().getFullYear();
 		background-size: var(--shop-noise-size);
 		color: var(--wa-color-text-quiet);
 		text-wrap: balance;
+
+		> * {
+			position: relative;
+			z-index: 1;
+		}
 
 		.shop-social-list {
 			list-style: none;
