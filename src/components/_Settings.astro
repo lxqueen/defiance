@@ -1,0 +1,21 @@
+<wa-dropdown placement="bottom-end">
+	<button slot="trigger" class="wa-neutral wa-pill wa-plain">
+		Settings
+	</button>
+
+	<wa-menu id="appSettingsMenu">
+		<wa-menu-label>Color Scheme</wa-menu-label>
+		<wa-menu-item value="auto"><em>Auto</em></wa-menu-item>
+		<wa-menu-item value="light">Light</wa-menu-item>
+		<wa-menu-item value="dark">Dark</wa-menu-item>
+	</wa-menu>
+</wa-dropdown>
+
+<script>
+	const menu = document.querySelector('#appSettingsMenu');
+
+	menu.addEventListener('wa-select', (event) => {
+		localStorage.setItem('color_scheme', event.detail.item.value);
+		globalThis.changeColorScheme();
+	});
+</script>
