@@ -3,6 +3,17 @@ body {
 	flex-direction: column;
 }
 
+body > main {
+	display: flex;
+	flex-direction: column;
+	margin-block: var(--wa-space-3xl);
+	gap: var(--wa-space-3xl);
+
+	> * {
+		margin-block: 0;
+	}
+}
+
 .shop-container {
 	padding-inline: var(--shop-content-gutter);
 	margin-inline: auto;
@@ -22,7 +33,6 @@ body {
 
 	> * {
 		margin-block: 0;
-		margin-inline: 0;
 	}
 }
 
