@@ -1,6 +1,7 @@
 export const SITE_NAME = "Lexi's Mods & Miscellany";
 
 interface SocialLink {
+	/** Make sure the name value has a matching icon definition in _SocialIcon.astro. */
 	name: string;
 	value: string;
 	url?: string;

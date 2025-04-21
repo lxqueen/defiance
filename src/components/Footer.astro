@@ -5,6 +5,7 @@ import {
 	SITE_NAME,
 	SOCIALS,
 } from "../consts";
+import SocialIcon from "./_SocialIcon.astro";
 
 import "./Footer.css";
 
@@ -28,7 +29,7 @@ const CURRENT_YEAR = new Date().getFullYear();
 					return (
 						<li>
 							<Element class="wa-flank wa-gap-xs" target="_blank" title={social.name} href={social.url}>
-								<span>{social.name}</span>
+								<SocialIcon name={social.name} />
 								<span>{social.value}</span>
 							</Element>
 						</li>

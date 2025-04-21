@@ -1,0 +1,29 @@
+---
+import type { ACTION_ERROR_CODES } from "astro:actions";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import BlueskyLogo from "phosphor-astro/Butterfly.astro";
+import DiscordLogo from "phosphor-astro/DiscordLogo.astro";
+import DefianceLogo from "../assets/icons/DefianceLogo.svg";
+
+interface Props {
+	name: string;
+}
+
+const { name, ...props } = Astro.props;
+
+let Element: string | AstroComponentFactory = "span";
+
+switch (name) {
+	case "Bluesky":
+		Element = BlueskyLogo;
+		break;
+	case "Discord":
+		Element = DiscordLogo;
+		break;
+	case "Defiance":
+		Element = DefianceLogo;
+		break;
+}
+---
+
+<Element class:list={["icon"]} {...props} />
