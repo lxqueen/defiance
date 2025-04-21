@@ -1,0 +1,11 @@
+---
+const { author, ...props } = Astro.props;
+---
+
+<div class="wa-callout wa-neutral wa-stack wa-gap-m" {...props}>
+	<p class="shop-testimonial-content">
+		<slot />
+	</p>
+
+	<p class="shop-testimonial-author wa-caption-m">{author}</p>
+</div>

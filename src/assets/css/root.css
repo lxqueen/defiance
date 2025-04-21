@@ -9,3 +9,19 @@ body {
 	max-width: var(--shop-content-width);
 	width: 100%;
 }
+
+.shop-hgroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wa-space-xs);
+	margin-inline: auto;
+	max-width: var(--shop-content-width-narrow);
+	width: 100%;
+	text-align: center;
+	justify-content: flex-start;
+
+	> * {
+		margin-block: 0;
+		margin-inline: 0;
+	}
+}
