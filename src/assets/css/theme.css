@@ -1,4 +1,9 @@
 :root {
+	/* WA overrides. */
+	--wa-font-family-body: var(--font-exo);
+	--wa-font-family-heading: var(--font-montserrat);
+
+	/* Custom variables. */
 	--shop-content-width: 75rem;
 	--shop-content-width-narrow: 40rem;
 	--shop-content-gutter: var(--wa-space-xl);

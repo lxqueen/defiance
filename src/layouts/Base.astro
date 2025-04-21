@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import { SITE_NAME } from "../consts";
 
 import "../assets/css/theme.css";
@@ -15,6 +16,8 @@ const { title, ...props } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ? `${title} | ${SITE_NAME}` : SITE_NAME}</title>
 
+		<Font cssVariable="--font-exo" />
+		<Font cssVariable="--font-montserrat" />
 		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/default.css" />
 		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/webawesome.css" />
 		<script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/webawesome.loader.js"></script>
