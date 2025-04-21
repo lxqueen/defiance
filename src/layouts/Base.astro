@@ -26,17 +26,17 @@ const { title, ...props } = Astro.props;
 
 		<script>
 			// Check/apply dark mode.
-			const colorScheme = localStorage.getItem('color_scheme') ?? 'auto';
 			const systemSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-			function changeColorScheme(event = systemSchemeDark) {
+			globalThis.changeColorScheme = function(event = systemSchemeDark) {
+				const colorScheme = localStorage.getItem('color_scheme') ?? 'auto';
+
 				const isDark = colorScheme === 'auto' ? event.matches : colorScheme === 'dark';
 				document.documentElement.classList.toggle('wa-dark', isDark);
-				localStorage.setItem('color_scheme', colorScheme === 'auto' ? 'auto' : isDark ? 'dark' : 'light');
 			}
 
-			systemSchemeDark.addEventListener('change', changeColorScheme);
-			changeColorScheme();
+			systemSchemeDark.addEventListener('change', globalThis.changeColorScheme);
+			globalThis.changeColorScheme();
 		</script>
 	</head>
 
