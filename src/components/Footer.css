@@ -4,6 +4,7 @@
 	padding-block: var(--wa-space-xl) var(--wa-space-3xl);
 	background-color: var(--wa-color-surface-lowered);
 	color: var(--wa-color-text-quiet);
+	text-wrap: balance;
 
 	.shop-social-list {
 		list-style: none;

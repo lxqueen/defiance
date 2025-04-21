@@ -2,6 +2,7 @@
 	position: relative;
 	padding-block: var(--wa-space-3xl);
 	background-color: var(--wa-color-surface-lowered);
+	text-wrap: balance;
 
 	.shop-testimonial-content {
 		margin-block: auto;

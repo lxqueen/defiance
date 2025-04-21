@@ -30,6 +30,7 @@ body > main {
 	width: 100%;
 	text-align: center;
 	justify-content: flex-start;
+	text-wrap: balance;
 
 	> * {
 		margin-block: 0;
