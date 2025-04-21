@@ -1,0 +1,11 @@
+---
+import "./VotanSubhead.css";
+
+const { castithan = "", irathient = "" } = Astro.props;
+---
+
+<div class="shop-subhead wa-body-l" aria-hidden>
+	<span class="font-castithan">{castithan}</span>
+	<span class="shop-subhead-divider">/</span>
+	<span class="font-irathient">{irathient}</span>
+</div>
