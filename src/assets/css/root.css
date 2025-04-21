@@ -14,6 +14,13 @@ body > main {
 	}
 }
 
+.icon {
+	display: inline-block;
+	box-sizing: content-box !important;
+	width: auto;
+	height: 1em;
+}
+
 .shop-container {
 	padding-inline: var(--shop-content-gutter);
 	margin-inline: auto;

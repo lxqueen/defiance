@@ -10,7 +10,8 @@
 		"lint": "biome check --write --unsafe"
 	},
 	"dependencies": {
-		"astro": "5.7.4"
+		"astro": "5.7.4",
+		"phosphor-astro": "2.1.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4"

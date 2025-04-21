@@ -1,6 +1,11 @@
+---
+import GearSix from "phosphor-astro/GearSix.astro";
+---
+
 <wa-dropdown placement="bottom-end">
-	<button slot="trigger" class="wa-neutral wa-pill wa-plain">
-		Settings
+	<button slot="trigger" class="wa-neutral wa-pill wa-plain" title="Settings">
+		<GearSix class="icon" slot="prefix" />
+		<span class="wa-visually-hidden">Settings</span>
 	</button>
 
 	<wa-menu id="appSettingsMenu">

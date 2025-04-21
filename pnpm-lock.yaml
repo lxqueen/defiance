@@ -11,6 +11,9 @@ importers:
       astro:
         specifier: 5.7.4
         version: 5.7.4(rollup@4.40.0)(typescript@5.8.3)
+      phosphor-astro:
+        specifier: 2.1.0
+        version: 2.1.0
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -1089,6 +1092,9 @@ packages:
 
   parse5@7.2.1:
     resolution: {integrity: sha512-BuBYQYlv1ckiPdQi/ohiivi9Sagc9JG+Ozs0r7b/0iK3sKmrb0b9FdWdBbOdx6hBCM/F9Ir82ofnBhtZOjCRPQ==}
+
+  phosphor-astro@2.1.0:
+    resolution: {integrity: sha512-qyYUlxF8DbfHc+85DDGPL04ghNBwrVK75EsNsBfYOChiCeCRwAwfbHxj/qqPrrSFPMgh9cUyEvgKYjI/7bjCUA==}
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -2741,6 +2747,8 @@ snapshots:
   parse5@7.2.1:
     dependencies:
       entities: 4.5.0
+
+  phosphor-astro@2.1.0: {}
 
   picocolors@1.1.1: {}
 
