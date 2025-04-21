@@ -25,3 +25,16 @@ body {
 		margin-inline: 0;
 	}
 }
+
+/* Alien scripts. */
+.font-castithan {
+	font-family: var(--font-castithan);
+	font-style: normal;
+	font-weight: normal;
+}
+
+.font-irathient {
+	font-family: var(--font-irathient);
+	font-style: normal;
+	font-weight: normal;
+}
