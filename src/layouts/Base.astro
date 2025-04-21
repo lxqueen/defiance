@@ -1,0 +1,38 @@
+---
+import { SITE_NAME } from "../consts";
+
+const { title, ...props } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title ? `${title} | ${SITE_NAME}` : SITE_NAME}</title>
+
+		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/default.css" />
+		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/webawesome.css" />
+		<script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/webawesome.loader.js"></script>
+
+		<script>
+			// Check/apply dark mode.
+			const colorScheme = localStorage.getItem('color_scheme') ?? 'auto';
+			const systemSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+			function changeColorScheme(event = systemSchemeDark) {
+				const isDark = colorScheme === 'auto' ? event.matches : colorScheme === 'dark';
+				document.documentElement.classList.toggle('wa-dark', isDark);
+				localStorage.setItem('color_scheme', colorScheme === 'auto' ? 'auto' : isDark ? 'dark' : 'light');
+			}
+
+			systemSchemeDark.addEventListener('change', changeColorScheme);
+			changeColorScheme();
+		</script>
+	</head>
+
+	<body>
+		<slot />
+	</body>
+</html>

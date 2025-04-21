@@ -1,35 +1,8 @@
 ---
-
+import BaseLayout from "../layouts/Front.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-
-		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/default.css" />
-		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/webawesome.css" />
-		<script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/webawesome.loader.js"></script>
-
-		<script>
-			// Check/apply dark mode.
-			const colorScheme = localStorage.getItem('color_scheme') ?? 'auto';
-			const systemSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-			function changeColorScheme(event = systemSchemeDark) {
-				const isDark = colorScheme === 'auto' ? event.matches : colorScheme === 'dark';
-				document.documentElement.classList.toggle('wa-dark', isDark);
-				localStorage.setItem('color_scheme', colorScheme === 'auto' ? 'auto' : isDark ? 'dark' : 'light');
-			}
-
-			systemSchemeDark.addEventListener('change', changeColorScheme);
-			changeColorScheme();
-		</script>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<h1>Astro</h1>
+	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, ut delectus? In enim ratione ullam temporibus necessitatibus ab perspiciatis, dolores repellendus quibusdam officia ipsum ipsa sed. Debitis nemo eveniet odit?</p>
+</BaseLayout>
