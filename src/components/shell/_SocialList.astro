@@ -1,0 +1,27 @@
+---
+import { SOCIALS } from "../../consts";
+import SocialIcon from "./_SocialIcon.astro";
+---
+
+<ul>
+	{SOCIALS.map((social) => {
+		const Element = social.url ? 'a' : 'span';
+
+		return (
+			<li>
+				<Element class="wa-flank wa-gap-xs" target="_blank" title={social.name} href={social.url}>
+					<SocialIcon name={social.name} />
+					<span>{social.value}</span>
+				</Element>
+			</li>
+		)
+	})}
+</ul>
+
+<style scoped>
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+</style>
