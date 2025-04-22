@@ -1,5 +1,7 @@
 ---
 import { Font } from "astro:assets";
+import faviconPng from "../assets/images/favicon.png";
+import faviconSvg from "../assets/images/favicon.svg";
 import { SITE_NAME } from "../consts";
 
 import "../assets/css/theme.css";
@@ -15,11 +17,12 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ? `${title} | ${SITE_NAME}` : SITE_NAME}</title>
 
+		<link rel="icon" type="image/svg+xml" href={faviconSvg.src} />
+		<link rel="icon" type="image/png" href={faviconPng.src} />
 		<Font cssVariable="--font-castithan" />
 		<Font cssVariable="--font-exo" />
 		<Font cssVariable="--font-irathient" />
