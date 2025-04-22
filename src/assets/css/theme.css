@@ -11,6 +11,8 @@
 	--shop-content-gutter: var(--wa-space-xl);
 	--shop-bg-noise-image: url("../images/noise.webp");
 	--shop-bg-noise-size: 8rem;
+	--shop-bg-dots-image: url("../images/dots.svg");
+	--shop-bg-dots-size: 0.25rem;
 }
 
 /* Colors. */
