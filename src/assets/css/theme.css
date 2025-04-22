@@ -9,8 +9,8 @@
 	--shop-content-width: 75rem;
 	--shop-content-width-narrow: 40rem;
 	--shop-content-gutter: var(--wa-space-xl);
-	--shop-noise-image: url("../images/noise.webp");
-	--shop-noise-size: 8rem;
+	--shop-bg-noise-image: url("../images/noise.webp");
+	--shop-bg-noise-size: 8rem;
 }
 
 /* Colors. */
