@@ -3,6 +3,7 @@
 	--wa-font-family-body: var(--font-exo);
 	--wa-font-family-heading: var(--font-montserrat);
 	--wa-font-weight-bold: 700;
+	--wa-panel-border-radius: var(--wa-border-radius-m);
 
 	/* Custom variables. */
 	--shop-content-width: 75rem;
