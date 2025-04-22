@@ -1,0 +1,53 @@
+<nav class="front-nav">
+	<ul class="shop-container">
+		<li>
+			<a href="#forSale">For Sale</a>
+		</li>
+		<li>
+			<a href="#location">Where to Find Me</a>
+		</li>
+		<li>
+			<a href="#testimonials">Testimonials</a>
+		</li>
+	</ul>
+</nav>
+
+<style scoped>
+	.front-nav {
+		position: sticky;
+		inset-block-start: calc(var(--wa-border-radius-s) * -1);
+		inset-inline: 0;
+		background-color: var(--wa-color-surface-raised);
+		border-block: var(--wa-border-width-s) solid var(--wa-color-neutral-border-quiet);
+
+		ul {
+			display: flex;
+			list-style: none;
+			overflow-inline: scroll;
+			margin-block: 0;
+			scrollbar-width: thin;
+
+			@supports (scrollbar-width: none) {
+				scrollbar-width: none;
+			}
+		}
+
+		a {
+			display: block;
+			padding-block: var(--wa-space-s);
+			padding-inline: var(--wa-space-m);
+			text-wrap: nowrap;
+			font-weight: var(--wa-font-weight-action);
+			text-decoration: none;
+
+			&:hover,
+			&:focus-visible {
+				background-color: color-mix(in oklab, transparent, var(--wa-color-mix-hover));
+			}
+
+			&:active {
+				background-color: color-mix(in oklab, transparent, var(--wa-color-mix-active));
+			}
+		}
+	}
+</style>
