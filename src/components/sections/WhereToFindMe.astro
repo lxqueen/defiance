@@ -57,7 +57,7 @@ const optimizedBackground = await getImage({
 
 		.shop-crater {
 			position: relative;
-			border: 1px solid var(--border-color);
+			border: var(--wa-border-width-s) solid var(--border-color);
 			box-shadow: var(--wa-shadow-l);
 
 			img {
@@ -69,6 +69,7 @@ const optimizedBackground = await getImage({
 				object-position: center;
 				border: .5rem solid var(--wa-color-gray-90);
 				box-sizing: border-box;
+				filter: sepia(0.4);
 			}
 		}
 	}
