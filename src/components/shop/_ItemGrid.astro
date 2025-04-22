@@ -1,0 +1,49 @@
+---
+import { execSync } from "node:child_process";
+import ItemCard from "./_ItemCard.astro";
+
+const LAST_UPDATED = execSync('git log -1 --format="%ci"');
+---
+
+<div class="shop-filters wa-split">
+	<div class="wa-stack wa-gap-0 wa-size-s">
+		<p>10 items</p>
+		<p class="wa-caption-m">Last updated <wa-relative-time date={LAST_UPDATED}></wa-relative-time></p>
+	</div>
+
+	<div>
+		<button>Filters</button>
+	</div>
+</div>
+
+<div class="shop-results wa-grid" data-view="grid">
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+	<ItemCard />
+</div>
+
+<style scoped>
+	.shop-filters {
+		background-color: var(--wa-color-surface-lowered);
+		padding-block: var(--wa-space-m);
+		padding-inline: var(--wa-space-l);
+		border-radius: var(--wa-panel-border-radius);
+	}
+
+	.shop-results {
+		&[data-view="grid"] {
+			--min-column-size: 25ch;
+		}
+
+		&[data-view="list"] {
+			--min-column-size: 100%;
+		}
+	}
+</style>

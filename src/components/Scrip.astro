@@ -1,0 +1,25 @@
+---
+interface Props {
+	value: number;
+}
+
+const { value, ...props } = Astro.props;
+---
+
+<span data-scrip {...props}>
+	<span class="symbol" aria-hidden>Sc</span>
+	<span>{value}</span>
+	<span class="wa-visually-hidden">scrip</span>
+</span>
+
+<style scoped>
+	[data-scrip] {
+		display: inline-flex;
+	}
+
+	/* Tweak to match font. */
+	.symbol {
+		letter-spacing: -0.2em;
+		margin-inline-end: 0.2em;
+	}
+</style>

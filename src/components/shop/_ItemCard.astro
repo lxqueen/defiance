@@ -1,0 +1,56 @@
+---
+import Scrip from "../Scrip.astro";
+
+const PLACEHOLDER_DATE = new Date("2025-01-01").toUTCString();
+---
+
+<wa-card class="shop-item" with-header with-footer appearance="filled outlined">
+	<div slot="header" class="wa-stack wa-gap-xs">
+		<h2 class="wa-heading-m">New Gun One</h2>
+		<p class="wa-caption-m">Pump Shotgun &bull; Barrel</p>
+	</div>
+
+	This card has a header. You can put all sorts of things in it!
+
+	<div slot="footer" class="footer wa-cluster wa-gap-xs">
+		<wa-relative-time class="updated wa-caption-s" date={PLACEHOLDER_DATE}></wa-relative-time>
+
+		<Scrip class="price" value={10000} />
+		<Scrip class="price --old" value={10000} />
+		<Scrip class="price --sale" value={10000} />
+	</div>
+</wa-card>
+
+<style scoped>
+	.shop-item {
+		&::part(header),
+		&::part(body),
+		&::part(footer) {
+			padding: calc(var(--spacing) / 2) var(--spacing);
+		}
+
+		.footer {
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		.updated {
+			margin-inline-end: auto;
+		}
+
+		.price {
+			color: var(--wa-color-yellow);
+			font-weight: var(--wa-font-weight-bold);
+
+			&.--old {
+				font-size: var(--wa-font-size-xs);
+				color: var(--wa-color-text-quiet);
+				text-decoration: line-through;
+			}
+
+			&.--sale {
+				color: var(--wa-color-green);
+			}
+		}
+	}
+</style>
