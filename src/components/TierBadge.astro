@@ -1,0 +1,68 @@
+---
+import { type ItemTier, ItemTierNames } from "@/consts";
+
+interface Props {
+	tier: ItemTier;
+}
+
+const { tier, ...props } = Astro.props;
+
+const tierName = ItemTierNames[tier];
+const tierLabel = `${tierName} (tier ${tier})`;
+---
+
+<span
+	class="badge"
+	data-tier={tier}
+	title={tierLabel}
+	aria-label={tierLabel}
+	{...props}
+>T{tier}</span>
+
+<style scoped>
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: max(var(--wa-font-size-2xs), 0.75em);
+		font-weight: var(--wa-font-weight-semibold);
+		line-height: 1;
+		background-color: var(--background-color, var(--wa-color-fill-loud));
+		border-radius: var(--wa-border-radius-s);
+		color: var(--text-color, var(--wa-color-on-loud));
+		white-space: nowrap;
+		padding: 0.375em 0.625em;
+		user-select: none;
+		cursor: inherit;
+
+		&[data-tier="1"] {
+			--background-color: color-mix(in oklab, var(--shop-color-tier-1), transparent 80%);
+			--text-color: var(--shop-color-tier-1);
+		}
+
+		&[data-tier="2"] {
+			--background-color: color-mix(in oklab, var(--shop-color-tier-2), transparent 80%);
+			--text-color: var(--shop-color-tier-2);
+		}
+
+		&[data-tier="3"] {
+			--background-color: color-mix(in oklab, var(--shop-color-tier-3), transparent 80%);
+			--text-color: var(--shop-color-tier-3);
+		}
+
+		&[data-tier="4"] {
+			--background-color: color-mix(in oklab, var(--shop-color-tier-4), transparent 80%);
+			--text-color: var(--shop-color-tier-4);
+		}
+
+		&[data-tier="5"] {
+			--background-color: color-mix(in oklab, var(--shop-color-tier-5), transparent 80%);
+			--text-color: var(--shop-color-tier-5);
+		}
+
+		&[data-tier="6"] {
+			--background-color: color-mix(in oklab, var(--shop-color-tier-6), transparent 80%);
+			--text-color: var(--shop-color-tier-6);
+		}
+	}
+</style>

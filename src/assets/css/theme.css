@@ -31,4 +31,12 @@
 	--wa-color-gray-20: oklch(32% calc(0.03 * 0.8) 215);
 	--wa-color-gray-10: oklch(24% calc(0.03 * 0.7) 215);
 	--wa-color-gray-05: oklch(18% calc(0.03 * 0.5) 215);
+
+	/* Game-related colors. */
+	--shop-color-tier-1: var(--wa-color-text-quiet);
+	--shop-color-tier-2: var(--wa-color-green);
+	--shop-color-tier-3: var(--wa-color-blue);
+	--shop-color-tier-4: var(--wa-color-purple);
+	--shop-color-tier-5: var(--wa-color-orange);
+	--shop-color-tier-6: var(--wa-color-yellow);
 }

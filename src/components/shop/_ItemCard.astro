@@ -1,13 +1,23 @@
 ---
 import Scrip from "../Scrip.astro";
+import TierBadge from "../TierBadge.astro";
 
 const PLACEHOLDER_DATE = new Date("2025-01-01").toUTCString();
+
+const tier = 5;
 ---
 
 <wa-card class="shop-item" with-header with-footer appearance="filled outlined">
-	<div slot="header" class="wa-stack wa-gap-xs">
-		<h2 class="wa-heading-m">New Gun One</h2>
-		<p class="wa-caption-m">Pump Shotgun &bull; Barrel</p>
+	<div slot="header" class="header wa-stack wa-gap-xs">
+		<h2 class="wa-heading-m" data-tier={tier}>New Gun One</h2>
+
+		<p class="wa-caption-m wa-cluster wa-gap-2xs">
+			<TierBadge tier={tier} />
+			<span>&bull;</span>
+			<span>Pump Shotgun</span>
+			<span>&bull;</span>
+			<span>Barrel</span>
+		</p>
 	</div>
 
 	This card has a header. You can put all sorts of things in it!
@@ -29,6 +39,38 @@ const PLACEHOLDER_DATE = new Date("2025-01-01").toUTCString();
 		&::part(body),
 		&::part(footer) {
 			padding: calc(var(--spacing) / 2) var(--spacing);
+		}
+
+		.header {
+			span[data-tier] {
+				font-weight: var(--wa-font-weight-bold);
+			}
+
+			h2 {
+				&[data-tier="1"] {
+					color: var(--shop-color-tier-1);
+				}
+
+				&[data-tier="2"] {
+					color: var(--shop-color-tier-2);
+				}
+
+				&[data-tier="3"] {
+					color: var(--shop-color-tier-3);
+				}
+
+				&[data-tier="4"] {
+					color: var(--shop-color-tier-4);
+				}
+
+				&[data-tier="5"] {
+					color: var(--shop-color-tier-5);
+				}
+
+				&[data-tier="6"] {
+					color: var(--shop-color-tier-6);
+				}
+			}
 		}
 
 		.footer {

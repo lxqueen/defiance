@@ -26,3 +26,14 @@ export const SOCIALS: SocialLink[] = [
 
 export const FAWKES_DISCORD = "https://discord.gg/fawkes";
 export const ARK_ANGELS_DISCORD = "https://discord.gg/dwTwtYH6Hu";
+
+export type ItemTier = 1 | 2 | 3 | 4 | 5 | 6;
+
+export const ItemTierNames: { [K in ItemTier]: string } = {
+	1: "Common",
+	2: "Uncommon",
+	3: "Rare",
+	4: "Epic",
+	5: "Legendary",
+	6: "Supreme",
+};
