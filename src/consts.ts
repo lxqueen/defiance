@@ -20,7 +20,7 @@ export const SOCIALS: SocialLink[] = [
 	},
 	{
 		name: "Defiance",
-		value: "lxqueen",
+		value: "Lexi [lxqueen]",
 	},
 ];
 
