@@ -8,7 +8,7 @@ const { value, ...props } = Astro.props;
 
 <span data-scrip {...props}>
 	<span class="symbol" aria-hidden>Sc</span>
-	<span>{value}</span>
+	<span>&ThickSpace;{value}</span>
 	<span class="wa-visually-hidden">scrip</span>
 </span>
 
@@ -20,6 +20,5 @@ const { value, ...props } = Astro.props;
 	/* Tweak to match font. */
 	.symbol {
 		letter-spacing: -0.2em;
-		margin-inline-end: 0.2em;
 	}
 </style>
