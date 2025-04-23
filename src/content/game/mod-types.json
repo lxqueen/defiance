@@ -1,0 +1,7 @@
+[
+	{ "id": 1, "name": "Barrel" },
+	{ "id": 2, "name": "Magazine" },
+	{ "id": 3, "name": "Sight" },
+	{ "id": 4, "name": "Stock" },
+	{ "id": 5, "name": "Blade Mod" }
+]

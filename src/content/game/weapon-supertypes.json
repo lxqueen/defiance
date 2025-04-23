@@ -1,0 +1,11 @@
+[
+	{ "id": 1, "name": "Automatic", "shortname": "AR/SMG/LMG" },
+	{ "id": 2, "name": "BMG", "shortname": "BMG" },
+	{ "id": 3, "name": "Detonator", "shortname": "DET" },
+	{ "id": 4, "name": "Infector", "shortname": "INF" },
+	{ "id": 5, "name": "Pistol", "shortname": "PIS" },
+	{ "id": 6, "name": "Rocket Launcher", "shortname": "RL" },
+	{ "id": 7, "name": "Shotgun", "shortname": "SG" },
+	{ "id": 8, "name": "Sniper Rifle", "shortname": "SR" },
+	{ "id": 9, "name": "Melee", "shortname": "MEL" }
+]

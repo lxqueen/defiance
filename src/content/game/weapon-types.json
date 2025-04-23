@@ -1,0 +1,16 @@
+[
+	{ "id": 1, "name": "Assault Rifle", "shortname": "AR" },
+	{ "id": 2, "name": "BMG", "shortname": "BMG" },
+	{ "id": 3, "name": "Bolt Action Sniper Rifle", "shortname": "BSR" },
+	{ "id": 4, "name": "Combat Shotgun", "shortname": "CSG" },
+	{ "id": 5, "name": "Detonator", "shortname": "DET" },
+	{ "id": 6, "name": "Infector", "shortname": "INF" },
+	{ "id": 7, "name": "Light Machine Gun", "shortname": "LMG" },
+	{ "id": 8, "name": "Pistol", "shortname": "PIS" },
+	{ "id": 9, "name": "Pump Shotgun", "shortname": "PSG" },
+	{ "id": 10, "name": "Rocket Launcher", "shortname": "RL" },
+	{ "id": 11, "name": "Sawed-Off Shotgun", "shortname": "SOSG" },
+	{ "id": 12, "name": "Semi-Auto Sniper Rifle", "shortname": "SASR" },
+	{ "id": 13, "name": "Sub Machine Gun", "shortname": "SMG" },
+	{ "id": 14, "name": "Melee", "shortname": "MEL" }
+]
