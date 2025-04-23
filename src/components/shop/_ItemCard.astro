@@ -10,7 +10,7 @@ interface Props {
 
 const { item } = Astro.props;
 
-const { Content: ItemContent } = await render(item);
+const ItemContent = await render(item);
 
 // biome-ignore lint/style/noNonNullAssertion: this will always exist, suck it
 const parent = await getEntry(
@@ -18,12 +18,12 @@ const parent = await getEntry(
 	item.data.parent.id,
 )!;
 
-const { Content: ParentContent } = parent && (await render(parent));
+const ParentContent = parent && (await render(parent));
 
 const synergy =
 	item.data.synergy && (await getEntry("gameSynergies", item.data.synergy?.id));
 
-const { Content: SynergyContent } = await render(synergy);
+const SynergyContent = synergy && (await render(synergy));
 ---
 
 <wa-card class="shop-item" with-header with-footer appearance="filled outlined" size="small">
@@ -50,10 +50,10 @@ const { Content: SynergyContent } = await render(synergy);
 		</p>
 	</div>
 
-	<div class="content"><ItemContent /></div>
+	<div class="content"><ItemContent.Content /></div>
 	{!!(item.body && (parent.body || parent.data.stats)) && <hr />}
 	<div class="content">
-		<ParentContent />
+		<ParentContent.Content />
 
 		{parent.data.stats && (
 			<ul>
@@ -72,7 +72,7 @@ const { Content: SynergyContent } = await render(synergy);
 
 			<div class="content wa-body-xs">
 				<h3 class="wa-heading-s">Synergy: {synergy.data.name}</h3>
-				<SynergyContent />
+				<SynergyContent.Content />
 			</div>
 		</>
 	)}
