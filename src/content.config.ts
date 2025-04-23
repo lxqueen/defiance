@@ -62,6 +62,33 @@ const gameWeapons = defineCollection({
 	}),
 });
 
+// Our inventory
+const items = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/items" }),
+	schema: z.object({
+		name: z.string().optional(),
+		type: z.enum(["mod", "weapon"]).transform((name) => {
+			switch (name) {
+				case "mod":
+					return "gameMods";
+				case "weapon":
+					return "gameWeapons";
+			}
+		}),
+		parent: z.union([reference("gameMods"), reference("gameWeapons")]),
+		synergy: reference("gameSynergies").optional(),
+		tier: z
+			.number()
+			.min(1)
+			.max(6)
+			.default(1)
+			.transform((num) => num as ItemTier),
+		price: z.number(),
+		salePrice: z.number().optional(),
+		date: z.coerce.date(),
+	}),
+});
+
 // 4. Export a single `collections` object to register your collection(s)
 export const collections = {
 	gameMods,
@@ -70,4 +97,5 @@ export const collections = {
 	gameWeapons,
 	gameWeaponSupertypes,
 	gameWeaponTypes,
+	items,
 };
