@@ -2,6 +2,14 @@ import { defineCollection, reference, z } from "astro:content";
 import { file, glob } from "astro/loaders";
 import type { ItemTier } from "./consts";
 
+// Consts
+const tier = z
+	.number()
+	.min(1)
+	.max(6)
+	.default(1)
+	.transform((num) => num as ItemTier);
+
 // Game data
 const gameWeaponTypes = defineCollection({
 	loader: file("src/content/game/weapon-types.json"),
@@ -47,6 +55,7 @@ const gameMods = defineCollection({
 		name: z.string(),
 		type: reference("gameModTypes"),
 		weaponSupertype: reference("gameWeaponSupertypes"),
+		stats: z.record(z.string(), z.record(z.string(), z.string())).optional(),
 	}),
 });
 
@@ -59,6 +68,7 @@ const gameWeapons = defineCollection({
 	schema: z.object({
 		name: z.string(),
 		type: reference("gameWeaponTypes"),
+		stats: z.record(z.string(), z.record(z.string(), z.string())).optional(),
 	}),
 });
 
@@ -77,12 +87,7 @@ const items = defineCollection({
 		}),
 		parent: z.union([reference("gameMods"), reference("gameWeapons")]),
 		synergy: reference("gameSynergies").optional(),
-		tier: z
-			.number()
-			.min(1)
-			.max(6)
-			.default(1)
-			.transform((num) => num as ItemTier),
+		tier,
 		price: z.number(),
 		salePrice: z.number().optional(),
 		date: z.coerce.date(),

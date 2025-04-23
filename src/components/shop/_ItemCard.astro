@@ -51,12 +51,24 @@ const { Content: SynergyContent } = await render(synergy);
 	</div>
 
 	<div class="content"><ItemContent /></div>
-	{(!!item.body && !!parent.body) && <hr />}
-	<div class="content"><ParentContent /></div>
+	{!!(item.body && (parent.body || parent.data.stats)) && <hr />}
+	<div class="content">
+		<ParentContent />
+
+		{parent.data.stats && (
+			<ul>
+				{Object.entries(parent.data.stats[item.data.tier.toString()])?.map(([stat, value]) => (
+					<li>
+						<strong>{stat}:</strong> {value}
+					</li>
+				))}
+			</ul>
+		)}
+	</div>
 
 	{!!synergy && (
 		<>
-			{(!!item.body || !!parent.body) && <hr />}
+			{!!(item.body || parent.body || parent.data.stats) && <hr />}
 
 			<div class="content">
 				<h3 class="wa-heading-s">Synergy: {synergy.data.name}</h3>
