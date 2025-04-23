@@ -1,8 +1,11 @@
 ---
 import { execSync } from "node:child_process";
+import { getCollection } from "astro:content";
 import ItemCard from "./_ItemCard.astro";
 
 const LAST_UPDATED = execSync('git log -1 --format="%ci"');
+
+const items = await getCollection("items");
 ---
 
 <div class="shop-filters wa-split">
@@ -17,16 +20,7 @@ const LAST_UPDATED = execSync('git log -1 --format="%ci"');
 </div>
 
 <div class="shop-results wa-grid" data-view="grid">
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
-	<ItemCard />
+	{items.map((item) => <ItemCard item={item} />)}
 </div>
 
 <style scoped>

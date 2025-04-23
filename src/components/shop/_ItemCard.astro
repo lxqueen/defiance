@@ -1,33 +1,79 @@
 ---
+import { type CollectionEntry, getEntry, render } from "astro:content";
+import { ItemTierNumerals } from "@/consts";
 import Scrip from "../Scrip.astro";
 import TierBadge from "../TierBadge.astro";
 
-const PLACEHOLDER_DATE = new Date("2025-01-01").toUTCString();
+interface Props {
+	item: CollectionEntry<"items">;
+}
 
-const tier = 5;
+const { item } = Astro.props;
+
+const { Content: ItemContent } = await render(item);
+
+// biome-ignore lint/style/noNonNullAssertion: this will always exist, suck it
+const parent = await getEntry(
+	item.data.parent.collection,
+	item.data.parent.id,
+)!;
+
+const { Content: ParentContent } = parent && (await render(parent));
+
+const synergy =
+	item.data.synergy && (await getEntry("gameSynergies", item.data.synergy?.id));
+
+const { Content: SynergyContent } = await render(synergy);
 ---
 
-<wa-card class="shop-item" with-header with-footer appearance="filled outlined">
+<wa-card class="shop-item" with-header with-footer appearance="filled outlined" size="small">
 	<div slot="header" class="header wa-stack wa-gap-xs">
-		<h2 class="wa-heading-m" data-tier={tier}>New Gun One</h2>
+		<h2 class="wa-heading-m" data-tier={item.data.tier}>
+			{item.data.name ?? (
+				<>
+					{parent.data.name}
+					{item.data.type === 'gameMods' && ` ${ItemTierNumerals[item.data.tier]}`}
+				</>
+			)}
+		</h2>
 
 		<p class="wa-caption-m wa-cluster wa-gap-2xs">
-			<TierBadge tier={tier} />
+			<TierBadge tier={item.data.tier} />
+			{item.data.type === 'gameMods' && (
+				<>
+					<span>&bull;</span>
+					<span>{parent.data.weaponSupertype?.id}</span>
+				</>
+			)}
 			<span>&bull;</span>
-			<span>Pump Shotgun</span>
-			<span>&bull;</span>
-			<span>Barrel</span>
+			<span>{parent.data.type?.id}</span>
 		</p>
 	</div>
 
-	This card has a header. You can put all sorts of things in it!
+	<div class="content"><ItemContent /></div>
+	{(!!item.body && !!parent.body) && <hr />}
+	<div class="content"><ParentContent /></div>
+
+	{!!synergy && (
+		<>
+			{(!!item.body || !!parent.body) && <hr />}
+
+			<div class="content">
+				<h3 class="wa-heading-s">Synergy: {synergy.data.name}</h3>
+				<SynergyContent />
+			</div>
+		</>
+	)}
 
 	<div slot="footer" class="footer wa-cluster wa-gap-xs">
-		<wa-relative-time class="updated wa-caption-s" date={PLACEHOLDER_DATE}></wa-relative-time>
+		<wa-relative-time class="updated wa-caption-s" date={item.data.date}></wa-relative-time>
 
-		<Scrip class="price" value={10000} />
-		<Scrip class="price --old" value={10000} />
-		<Scrip class="price --sale" value={10000} />
+		{item.data.salePrice ? (
+			<Scrip class="price --old" value={item.data.price} />
+			<Scrip class="price --sale" value={item.data.salePrice} />
+		) : (
+			<Scrip class="price" value={item.data.price} />
+		)}
 	</div>
 </wa-card>
 
@@ -91,6 +137,21 @@ const tier = 5;
 				&[data-tier="6"] {
 					color: var(--shop-color-tier-6);
 				}
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-block);
+
+			> * {
+				margin-block: 0;
+			}
+
+			ul {
+				list-style: none;
+				text-indent: calc(var(--wa-space-xl) * -1);
 			}
 		}
 
