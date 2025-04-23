@@ -35,6 +35,8 @@ const tier = 5;
 	.shop-item {
 		--gradient-top: radial-gradient(50% 4em at top center, var(--wa-color-brand-fill-normal), transparent);
 		--gradient-back: linear-gradient(to bottom right, color-mix(in oklab, var(--background-color), white), var(--background-color));
+		--spacing-block: calc(var(--spacing) / 2);
+		--spacing-inline: var(--spacing);
 
 		background-image: var(--gradient-top), var(--gradient-back);
 
@@ -45,7 +47,8 @@ const tier = 5;
 		&::part(header),
 		&::part(body),
 		&::part(footer) {
-			padding: calc(var(--spacing) / 2) var(--spacing);
+			padding-block: var(--spacing-block);
+			padding-inline: var(--spacing-inline);
 		}
 
 		&::part(footer) {
@@ -82,6 +85,12 @@ const tier = 5;
 					color: var(--shop-color-tier-6);
 				}
 			}
+		}
+
+		hr {
+			margin-block: var(--spacing-block);
+			margin-inline: calc(var(--spacing-inline) * -1);
+			border-color: var(--border-color);
 		}
 
 		.footer {
