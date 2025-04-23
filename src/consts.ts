@@ -37,3 +37,12 @@ export const ItemTierNames: { [K in ItemTier]: string } = {
 	5: "Legendary",
 	6: "Supreme",
 };
+
+export const ItemTierNumerals: { [K in ItemTier]: string } = {
+	1: "I",
+	2: "II",
+	3: "III",
+	4: "IV",
+	5: "V",
+	6: "VI",
+};
