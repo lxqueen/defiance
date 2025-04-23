@@ -1,0 +1,19 @@
+---
+import Footer from "@/components/shell/Footer.astro";
+import Header from "@/components/shell/Header.astro";
+import { default as BaseLayout, type Props as BaseProps } from "./Base.astro";
+
+interface Props extends BaseProps {}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+	<Header />
+
+	<main>
+		<slot />
+	</main>
+
+	<Footer />
+</BaseLayout>
