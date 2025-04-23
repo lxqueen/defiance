@@ -1,0 +1,17 @@
+<svg viewBox="0 0 154 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<title>Von Bach Industries Official Partner</title>
+
+		<linearGradient id="vbi-grad-logo" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="var(--wa-color-red-50)" />
+			<stop offset="1" stop-color="var(--wa-color-red-40)" />
+		</linearGradient>
+	</defs>
+
+	<path fill="url(#vbi-grad-logo)" d="m 0,0 2.5,2.5 h 89 l 2.5,-2.5 z m 5,5 15.25,15.25 v -15.25 z m 17.75,0 v 17.75 l 4.25,4.25 h 0.9688 l 15.0312,-16 v 16 h 17 l 5,-5 v -7.75 h -4 l 4,-4 v -5.25 h -23.9512 l -13.5488,15 v -15 z m 44.25,0 v 22 l 4.25,-4.25 v -17.75 z m 6.75,0 v 15.25 l 15.25,-15.25 z m -25.5996,4.75 h 11.75 l -4.5,4.5 h -7.25 z m 0.1,8.25 h 13.5 l -4.5,4.5 h -9 z m -18.75,11.5 2.5,2.5 h 30 l 2.5,-2.5 z" />
+
+	<g fill="var(--wa-color-text-quiet)" font-family="var(--wa-font-family-heading)" font-size="12" font-weight="var(--wa-font-weight-heading)">
+		<text x="94" y="13.5">OFFICIAL</text>
+		<text x="94" y="27">PARTNER</text>
+	</g>
+</svg>

@@ -1,4 +1,6 @@
 ---
+import SgtLogo from "@/assets/images/footer-sgt.svg";
+import VbiLogo from "@/assets/images/footer-vbi.svg";
 import { ARK_ANGELS_DISCORD, FAWKES_DISCORD, SITE_NAME } from "@/consts";
 import SocialList from "./_SocialList.astro";
 
@@ -7,9 +9,14 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 <footer class="shop-footer">
 	<div class="shop-container wa-grid wa-size-s">
-		<div class="wa-stack wa-gap-s">
-			<p class="wa-caption-s">&copy; {CURRENT_YEAR} {SITE_NAME}. All rights reserved.</p>
-			<p class="wa-caption-s">{SITE_NAME} is not affiliated with Fawkes/Trion/Gamigo et al. All game content is property of their respective owners.</p>
+		<div class="wa-stack wa-gap-m">
+			<div class="footer-logos wa-cluster wa-gap-s">
+				<VbiLogo />
+				<SgtLogo />
+			</div>
+
+			<p class="wa-caption-m">&copy; {CURRENT_YEAR} {SITE_NAME}. All rights reserved.</p>
+			<p class="wa-caption-m">{SITE_NAME} is not affiliated with Fawkes/Trion/Gamigo et al. All game content is property of their respective owners.</p>
 		</div>
 
 		<div class="wa-stack wa-gap-s">
@@ -39,6 +46,14 @@ const CURRENT_YEAR = new Date().getFullYear();
 		> * {
 			position: relative;
 			z-index: 1;
+		}
+
+		.footer-logos {
+			svg,
+			img {
+				width: auto;
+				height: 2rem;
+			}
 		}
 	}
 </style>
