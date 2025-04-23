@@ -33,7 +33,14 @@ const tier = 5;
 
 <style scoped>
 	.shop-item {
-		background-image: linear-gradient(to bottom right, transparent, rgba(0 0 0 / 0.2));
+		--gradient-top: radial-gradient(50% 4em at top center, var(--wa-color-brand-fill-normal), transparent);
+		--gradient-back: linear-gradient(to bottom right, color-mix(in oklab, var(--background-color), white), var(--background-color));
+
+		background-image: var(--gradient-top), var(--gradient-back);
+
+		.wa-dark & {
+			--gradient-back: linear-gradient(to bottom right, var(--background-color), color-mix(in oklab, var(--background-color), black 20%));
+		}
 
 		&::part(header),
 		&::part(body),
