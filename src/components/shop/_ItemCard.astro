@@ -70,7 +70,7 @@ const SynergyContent = synergy && (await render(synergy));
 		<>
 			{!!(item.body || parent.body || parent.data.stats) && <hr />}
 
-			<div class="content wa-body-xs">
+			<div class="content --synergy wa-body-xs">
 				<h3 class="wa-heading-s">Synergy: {synergy.data.name}</h3>
 				<SynergyContent.Content />
 			</div>
@@ -161,9 +161,23 @@ const SynergyContent = synergy && (await render(synergy));
 				margin-block: 0;
 			}
 
+			h3 {
+				margin-block-start: calc(var(--spacing-block) * -1);
+				margin-inline: calc(var(--spacing-inline) * -1);
+				padding-block: var(--spacing-block);
+				padding-inline: var(--spacing-inline);
+				background-color: var(--background-color);
+				font-size: var(--wa-font-size-s);
+				border-bottom: var(--wa-border-width-s) var(--wa-border-style) var(--border-color);
+			}
+
 			ul {
 				list-style: none;
 				text-indent: calc(var(--wa-space-xl) * -1);
+			}
+
+			&.--synergy > *:where(:not(h3)) {
+				color: var(--wa-color-text-quiet);
 			}
 		}
 
