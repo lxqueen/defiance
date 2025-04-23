@@ -44,6 +44,11 @@ const tier = 5;
 			--gradient-back: linear-gradient(to bottom right, var(--background-color), color-mix(in oklab, var(--background-color), black 20%));
 		}
 
+		h2,
+		h3 {
+			font-family: var(--wa-font-family-body);
+		}
+
 		&::part(header),
 		&::part(body),
 		&::part(footer) {
@@ -61,6 +66,8 @@ const tier = 5;
 			}
 
 			h2 {
+				text-shadow: var(--wa-shadow-offset-x-s) var(--wa-shadow-offset-y-s) var(--wa-shadow-blur-s) color-mix(in oklab, var(--wa-color-shadow), transparent);
+
 				&[data-tier="1"] {
 					color: var(--shop-color-tier-1);
 				}
