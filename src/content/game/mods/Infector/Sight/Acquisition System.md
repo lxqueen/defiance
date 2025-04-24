@@ -12,5 +12,5 @@ stats:
   4:
     Range: "+4"
   5:
-    Range: "+5"
+    Range: "+6"
 ---
