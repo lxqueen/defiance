@@ -5,7 +5,11 @@ import ItemCard from "./_ItemCard.astro";
 
 const LAST_UPDATED = execSync('git log -1 --format="%ci"');
 
-const items = await getCollection("items");
+const items = await getCollection("items").then((data) => {
+	return data.sort((a, b) => {
+		return b.data.date.getTime() - a.data.date.getTime();
+	});
+});
 ---
 
 <div class="shop-filters wa-split">
