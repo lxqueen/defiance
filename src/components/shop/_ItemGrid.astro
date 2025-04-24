@@ -14,7 +14,7 @@ const items = await getCollection("items").then((data) => {
 
 <div class="shop-filters wa-split">
 	<div class="wa-stack wa-gap-0 wa-size-s">
-		<p>10 items</p>
+		<p>{items.length} items</p>
 		<p class="wa-caption-m">Last updated <wa-relative-time date={LAST_UPDATED}></wa-relative-time></p>
 	</div>
 
