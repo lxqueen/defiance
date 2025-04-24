@@ -1,5 +1,4 @@
 ---
-import { Font } from "astro:assets";
 import faviconPng from "@/assets/images/favicon.png";
 import faviconSvg from "@/assets/images/favicon.svg";
 import openGraphImage from "@/assets/images/opengraph.png";
@@ -10,6 +9,7 @@ import {
 	SITE_TAGLINE,
 } from "@/consts";
 
+import "@/assets/css/fonts.css";
 import "@/assets/css/theme.css";
 import "@/assets/css/root.css";
 
@@ -38,10 +38,6 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
 		<meta property="og:image" content={openGraphImage.src} />
 		<meta property="og:locale" content="en_GB" />
 
-		<Font cssVariable="--font-castithan" />
-		<Font cssVariable="--font-exo" />
-		<Font cssVariable="--font-irathient" />
-		<Font cssVariable="--font-montserrat" />
 		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/default.css" />
 		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/webawesome.css" />
 		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/brand/cyan.css" />

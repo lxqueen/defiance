@@ -1,0 +1,27 @@
+@import "@fontsource-variable/exo-2/wght.css";
+@import "@fontsource-variable/exo-2/wght-italic.css";
+@import "@fontsource-variable/montserrat/wght.css";
+@import "@fontsource-variable/montserrat/wght-italic.css";
+
+@font-face {
+	font-family: "Castithan";
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Castithan.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Irathient";
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Irathient.woff2") format("woff2");
+}
+
+:root {
+	--font-castithan: "Castithan";
+	--font-irathient: "Irathient";
+	--font-exo: "Exo 2 Variable";
+	--font-montserrat: "Montserrat Variable";
+}

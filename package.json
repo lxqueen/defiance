@@ -10,6 +10,8 @@
 		"lint": "biome check --write --unsafe"
 	},
 	"dependencies": {
+		"@fontsource-variable/exo-2": "5.2.5",
+		"@fontsource-variable/montserrat": "5.2.5",
 		"astro": "5.7.5",
 		"phosphor-astro": "2.1.0"
 	},
