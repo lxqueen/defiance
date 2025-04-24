@@ -47,7 +47,7 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
 		<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/brand/cyan.css" />
 		<script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/webawesome.loader.js"></script>
 
-		<script>
+		<script is:inline>
 			// Check/apply dark mode.
 			const systemSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
 
