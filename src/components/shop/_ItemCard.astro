@@ -83,8 +83,10 @@ const SynergyContent = synergy && (await render(synergy));
 		{item.data.salePrice ? (
 			<Scrip class="price --old" value={item.data.price} />
 			<Scrip class="price --sale" value={item.data.salePrice} />
-		) : (
+		) : item.data.price ? (
 			<Scrip class="price" value={item.data.price} />
+		) : (
+			<span class="price --offer">Best offer</span>
 		)}
 	</div>
 </wa-card>
@@ -208,6 +210,10 @@ const SynergyContent = synergy && (await render(synergy));
 
 			&.--sale {
 				color: var(--wa-color-green);
+			}
+
+			&.--offer {
+				color: var(--wa-color-cyan);
 			}
 		}
 	}

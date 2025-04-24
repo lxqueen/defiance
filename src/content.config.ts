@@ -88,7 +88,7 @@ const items = defineCollection({
 		parent: z.union([reference("gameMods"), reference("gameWeapons")]),
 		synergy: reference("gameSynergies").optional(),
 		tier,
-		price: z.number(),
+		price: z.number().optional(),
 		salePrice: z.number().optional(),
 		date: z.coerce.date(),
 	}),
