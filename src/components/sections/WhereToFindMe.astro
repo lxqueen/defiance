@@ -1,6 +1,7 @@
 ---
 import { Picture, getImage } from "astro:assets";
 import background from "@/assets/images/map-blank-cropped.png";
+import crater from "@/assets/images/crater.jpg";
 import VotanSubhead from "../VotanSubhead.astro";
 
 const optimizedBackground = await getImage({
@@ -22,7 +23,7 @@ const optimizedBackground = await getImage({
 		</hgroup>
 
 		<figure class="shop-crater wa-frame:landscape wa-outlined wa-border-radius-s">
-			<Picture src={background} formats={['avif', 'webp']} alt="The Crater bar, pictured at night." />
+			<Picture src={crater} formats={['avif', 'webp']} widths={[300, 450, 600]} alt="The Crater bar, with some kitted-out satisfied customers in the foreground." />
 		</figure>
 	</div>
 </section>
@@ -59,6 +60,7 @@ const optimizedBackground = await getImage({
 			position: relative;
 			border: var(--wa-border-width-s) solid var(--border-color);
 			box-shadow: var(--wa-shadow-l);
+			transform: rotate(-1.5deg);
 
 			img {
 				position: absolute;
