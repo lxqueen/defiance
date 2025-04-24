@@ -5,10 +5,10 @@ import { default as BaseLayout, type Props as BaseProps } from "./Base.astro";
 
 interface Props extends BaseProps {}
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
 	<Header />
 
 	<main>

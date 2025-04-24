@@ -1,4 +1,8 @@
 export const SITE_NAME = "Lexi's Mods & Miscellany";
+export const SITE_TAGLINE = "Defiance weapons, mods & gear";
+export const SITE_DESCRIPTION =
+	"Defiance weapons, mods & gear: reasonably priced, (mostly) blood-free, and come with a 30-minute warranty.";
+export const SITE_AUTHOR = "Alexis Queen";
 
 interface SocialLink {
 	/** Make sure the name value has a matching icon definition in _SocialIcon.astro. */
