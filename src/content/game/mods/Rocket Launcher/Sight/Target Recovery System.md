@@ -12,3 +12,5 @@ stats:
   4:
     Lock On Loss Time: "+0.80"
 ---
+
+*Attachable to Guided Rocket Launchers.*
