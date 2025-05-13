@@ -4,11 +4,15 @@ interface Props {
 }
 
 const { value, ...props } = Astro.props;
+
+const formattedValue = value
+	.toLocaleString("en-US", { useGrouping: true })
+	.replaceAll(",", "\u2009");
 ---
 
 <span data-scrip {...props}>
 	<span class="symbol" aria-hidden="true">Sc</span>
-	<span>&ThickSpace;{value}</span>
+	<span aria-label={value}>&ThickSpace;{formattedValue}</span>
 	<span class="wa-visually-hidden">scrip</span>
 </span>
 
