@@ -1,6 +1,6 @@
 ---
-import { execSync } from "node:child_process";
 import { getCollection } from "astro:content";
+import { execSync } from "node:child_process";
 import ItemCard from "./_ItemCard.astro";
 
 const LAST_UPDATED = execSync('git log -1 --format="%ci"');
